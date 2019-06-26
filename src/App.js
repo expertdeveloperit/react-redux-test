@@ -1,57 +1,24 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-import logo from './logo.svg';
-import './App.css';
-
-import { simpleAction } from './actions/simpleAction'
-
-/* 
- * mapDispatchToProps
-*/
-const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
-})
-
-/* 
- * mapStateToProps
-*/
-const mapStateToProps = state => ({
-  ...state
-})
-
-/**
- * @class App
- * @extends {Component}
- */
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./components/pages/Home";
+import Single from "./components/pages/Single";
+import { Provider } from "react-redux";
+import configureStore from "./store";
 class App extends Component {
-  /**
-   * @memberof App
-   * @summary handles button click 
-   */
-  simpleAction = (event) => {
-    this.props.simpleAction();
-  }
-
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <pre>
-          {
-            JSON.stringify(this.props)
-          }
-        </pre>
-        <button onClick={this.simpleAction}>Test redux action</button>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={configureStore()}>
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/single/:id" component={Single} />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
