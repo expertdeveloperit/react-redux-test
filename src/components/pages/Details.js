@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 class Details extends React.Component {
   componentDidMount() {}
 
@@ -22,9 +23,27 @@ class Details extends React.Component {
     console.log("person", this.props);
     return (
       <div className="container details">
+        <nav className="breadcrumbs-tab">
+          <div class="nav-wrapper">
+            <div class="col s12">
+              <Link to="/" className="breadcrumb">
+                <i className="material-icons">home</i>
+              </Link>
+              <a href="#!" className="breadcrumb">
+                First
+              </a>
+              <a href="#!" className="breadcrumb">
+                Second
+              </a>
+              <a href="#!" className="breadcrumb">
+                Third
+              </a>
+            </div>
+          </div>
+        </nav>
         <div className="card horizontal">
           <div className="card-image">
-            <img src="https://lorempixel.com/100/190/nature/6" />
+            <img src={thumbnail} alt={thumbnail} />
           </div>
           <div className="card-stacked">
             <div className="card-content">
@@ -64,55 +83,28 @@ class Details extends React.Component {
                     Profession
                   </a>
                 </li>
-
-                <li
-                  className="indicator"
-                  style={{ left: " 0px", right: "234px" }}
-                />
               </ul>
             </div>
-            <div className="card-content grey lighten-4">
+            <div className="card-content grey lighten-4 list">
               <div
                 id="Friends"
                 style={{ display: "block" }}
                 className="active tabcontent"
               >
-                dsdsd 1
+                {this.props.friends.map((name, i) => {
+                  return <span>{name}, </span>;
+                })}
               </div>
               <div
                 id="Profession"
                 className="tabcontent"
                 style={{ display: "none" }}
               >
-                Tedsdsdsdt 2
+                {this.props.professions.map((name, i) => {
+                  return <span>{name}, </span>;
+                })}
               </div>
             </div>
-          </div>
-        </div>
-        <div className="card" key={id}>
-          <div className="card-image">
-            <img src={thumbnail} alt={thumbnail} />
-            <span className="card-title">{name}</span>
-            <span
-              to="/"
-              className="btn-floating halfway-fab waves-effect waves-light red"
-            >
-              <i className="material-icons">add</i>
-            </span>
-          </div>
-
-          <div className="card-content">
-            <p>
-              <b>Weight: </b>
-              {weight}
-            </p>
-            <p>
-              <b>Hair Color: </b>
-              {hair_color}
-            </p>
-            <p>
-              <b>Age: {age}yrs</b>
-            </p>
           </div>
         </div>
       </div>
