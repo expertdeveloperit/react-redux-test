@@ -5,7 +5,6 @@ class Details extends React.Component {
   componentDidMount() {}
 
   opentab = (e, tabname) => {
-    console.log("evt,tabname", e, tabname);
     let { i, tabcontent, tablinks } = "";
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -15,17 +14,17 @@ class Details extends React.Component {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(tabname).style.display = "block";
+    document.getElementById(tabname).style.display = "flex";
     e.currentTarget.className += " active";
   };
   render() {
     const { id, name, age, thumbnail, weight, hair_color } = this.props;
-    console.log("person", this.props);
+
     return (
       <div className="container details">
         <nav className="breadcrumbs-tab">
-          <div class="nav-wrapper">
-            <div class="col s12">
+          <div className="nav-wrapper">
+            <div className="col s12">
               <Link to="/" className="breadcrumb">
                 <i className="material-icons">home</i>
               </Link>
@@ -88,11 +87,15 @@ class Details extends React.Component {
             <div className="card-content grey lighten-4 list">
               <div
                 id="Friends"
-                style={{ display: "block" }}
+                style={{ display: "flex" }}
                 className="active tabcontent"
               >
                 {this.props.friends.map((name, i) => {
-                  return <span>{name}, </span>;
+                  return (
+                    <span className="new badge" data-badge-caption="" key={i}>
+                      {name}
+                    </span>
+                  );
                 })}
               </div>
               <div
@@ -101,7 +104,11 @@ class Details extends React.Component {
                 style={{ display: "none" }}
               >
                 {this.props.professions.map((name, i) => {
-                  return <span>{name}, </span>;
+                  return (
+                    <span className="new badge" data-badge-caption="" key={i}>
+                      {name}
+                    </span>
+                  );
                 })}
               </div>
             </div>
