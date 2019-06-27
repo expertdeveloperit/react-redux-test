@@ -12,6 +12,12 @@ export const loadPersonDetails = id => dispatch => {
     payload: id
   });
 };
+export const filterData = text => dispatch => {
+  dispatch({
+    type: "SEARCH_TEXT",
+    payload: text
+  });
+};
 export const loadPeopelData = () => dispatch => {
   data.getDetails(people => {
     dispatch(receivePeople(people));

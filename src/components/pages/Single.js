@@ -21,15 +21,10 @@ const mapStateToProps = state => ({
 });
 
 /**
- * @class App
+ * @class Single
  * @extends {Component}
  */
 class Single extends Component {
-  /**
-   * @memberof App
-   * @summary handles button click
-   */
-
   componentDidMount() {
     let id = this.props.match.params.id;
     this.props.loadPersonDetails(id);
