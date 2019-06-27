@@ -25,11 +25,11 @@ const mapStateToProps = state => ({
 
 class Filter extends Component {
   handleChange = e => {
-    this.setState({ filter: true });
     this.props.filterData(e.target.value);
   };
 
   render() {
+    console.log("datata", this.props);
     return (
       <div className="container">
         <div className="search_field ">

@@ -31,10 +31,8 @@ class Home extends Component {
   }
   render() {
     const { people } = this.props;
-    console.log("people", people);
     return (
       <div className="container">
-        {/* <h3 className="center">Persons Data</h3> */}
         <Filter />
         <div className="box">
           {people.persons ? (

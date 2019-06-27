@@ -123,7 +123,7 @@ Details.propTypes = {
   age: PropTypes.number,
   name: PropTypes.string,
   thumbnail: PropTypes.string,
-  weight: PropTypes.string,
+  weight: PropTypes.number,
   hair_color: PropTypes.string
 };
 export default Details;
