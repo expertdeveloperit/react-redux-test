@@ -5,6 +5,7 @@ import "../../App.css";
 
 import { loadPeopelData } from "../../actions/index.js";
 import Person from "./Person";
+import Filter from "./Filter";
 /*
  * mapDispatchToProps
  */
@@ -30,10 +31,11 @@ class Home extends Component {
   }
   render() {
     const { people } = this.props;
-
+    console.log("people", people);
     return (
       <div className="container">
-        <h3 className="center">Animals Data</h3>
+        <h3 className="center">Persons Data</h3>
+        <Filter />
         <div className="box">
           {people.persons
             ? people.persons.map(person => {

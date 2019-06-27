@@ -1,12 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 class Person extends React.Component {
   render() {
     const { id, name, age, thumbnail, weight, hair_color } = this.props;
     return (
       <div className="card" key={id}>
         <div className="card-image">
-          <img src={thumbnail} alt={thumbnail} />
+          <Link to={`/details/${id}`}>
+            {" "}
+            <img src={thumbnail} alt={thumbnail} />
+          </Link>
           <span className="card-title">{name}</span>
           <span
             to="/"
@@ -29,12 +33,16 @@ class Person extends React.Component {
             <b>Age: {age}yrs</b>
           </p>
         </div>
+        <Link to={`/details/${id}`}>View Details</Link>
       </div>
     );
   }
 }
 Person.propTypes = {
   age: PropTypes.number,
-  name: PropTypes.string
+  name: PropTypes.string,
+  thumbnail: PropTypes.string,
+  weight: PropTypes.string,
+  hair_color: PropTypes.string
 };
 export default Person;
