@@ -1,6 +1,6 @@
 #### A simple redux setup with [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-### Basic application to show list of people and their details built with React & Redux
+### Basic application to show list of people,filter and their details built with React & Redux
 
 This simple application prototype shows how we can use React and Redux to build a friendly user experience.
 
@@ -45,5 +45,17 @@ If you do not want to redirect automatically then
 
 ```
 Add BROWSER=none in start script in package.json file like below
-"start": "BROWSER=none react-scripts start",
+"start": "BROWSER=none react-scripts start"
+```
+### Change Port
+
+```
+Add PORT='your post' in start script lik below
+"start": "POST=4000 react-scripts start"
+```
+### Clean node modules
+Excute the following command:
+
+```bash
+npm run clean
 ```
