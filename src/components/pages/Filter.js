@@ -10,14 +10,6 @@ const mapDispatchToProps = dispatch => ({
   filterData: text => dispatch(filterData(text))
 });
 
-/*
- * mapStateToProps
- */
-const mapStateToProps = state => ({
-  ...state,
-  people: state.peopleReducer.persons
-});
-
 /**
  * @class Filter
  * @extends {Component}
@@ -47,7 +39,4 @@ class Filter extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Filter);
+export default connect(mapDispatchToProps)(Filter);
