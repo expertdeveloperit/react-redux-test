@@ -6,7 +6,7 @@ class Person extends React.Component {
     const { id, name, age, thumbnail, weight, hair_color } = this.props;
 
     return (
-      <div className="card" key={id}>
+      <div className="card persons" key={id}>
         <div className="card-image">
           <Link to={`/details/${id}`}>
             {" "}

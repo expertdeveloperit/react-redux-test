@@ -7,10 +7,10 @@
     font-size: 2.4em;
     cursor: pointer;
 }
-.card{
+.card.persons{
     width: 300px;
 }
-.card .card-image{
+.card.persons .card-image{
     height: 250px;
 }
 .card .card-image img{
@@ -42,7 +42,7 @@ svg{
     padding: 10px;
 
 }
-.card .card-content{
+.card.persons .card-content{
     height: 170px;
 }
 .card .card-content p{
@@ -86,8 +86,9 @@ svg{
 }
 .details .card.horizontal{
     width: 100%;
-    height: 320px;
+    /* height: 320px; */
     margin-top:50px;
+    align-items: center;
 
 }
 .details .card.horizontal  .card-content .card-title{
@@ -100,16 +101,29 @@ svg{
 }
 .details .card.horizontal .card-content.list span{
    font-size: 18px;
-
+    padding:5px;
+    height: auto !important;
+    min-height: 33px !important;
+    margin-bottom: 5px;
 }
+.details .card.horizontal .card-content .tabcontent{
+    flex-wrap: wrap;
+
+ }
 .details .card.horizontal .card-image {
-    width: 250px;
+    width: 275px;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 
 }
 .details .card.horizontal .card-image img {
-    width: 100%;
-    height: 100%;
+
+    width: 250px;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 100%;
 
 }
 .tablinks{
@@ -149,5 +163,6 @@ svg{
     .details .card.horizontal .card-image{
         max-width: 100%;
         width: 100%;
+        height: 275px;
     }
 }
