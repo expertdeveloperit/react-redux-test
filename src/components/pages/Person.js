@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 class Person extends React.Component {
   render() {
     const { id, name, age, thumbnail, weight, hair_color } = this.props;
+    console.log("persone data", this.props);
     return (
       <div className="card" key={id}>
         <div className="card-image">
           <img src={thumbnail} alt={thumbnail} />
-          <span className="card-title">{name}</span>
+
           <span
             to="/"
             className="btn-floating halfway-fab waves-effect waves-light red"
@@ -17,6 +18,13 @@ class Person extends React.Component {
         </div>
 
         <div className="card-content">
+          <p className="card-title">
+            <b>{name}</b>
+          </p>
+          <p>
+            <b>Age:&nbsp;</b>
+            {age}yrs
+          </p>
           <p>
             <b>Weight: </b>
             {weight}
@@ -24,9 +32,6 @@ class Person extends React.Component {
           <p>
             <b>Hair Color: </b>
             {hair_color}
-          </p>
-          <p>
-            <b>Age: {age}yrs</b>
           </p>
         </div>
       </div>
