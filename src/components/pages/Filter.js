@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import "../../App.css";
-import { filterData } from "../../actions/index.js";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import '../../App.css';
+import { filterData } from '../../actions/index.js';
 /*
  * mapDispatchToProps
  */
@@ -24,11 +24,11 @@ const mapStateToProps = state => ({
 
 class Filter extends Component {
   handleChange = e => {
-    this.setState({ filter: true });
     this.props.filterData(e.target.value);
   };
 
   render() {
+    console.log('datata', this.props);
     return (
       <div className="container">
         <input
