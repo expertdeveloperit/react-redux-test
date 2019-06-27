@@ -2,8 +2,6 @@
   src/reducers/peopleReducer.js
 */
 export default (state = {}, action) => {
-  console.log("action", action.payload);
-  const regex = new RegExp(action.text, "i");
   switch (action.type) {
     case "GET_PEOPLE_LIST":
       const data = JSON.stringify(action.payload);
@@ -23,7 +21,6 @@ export default (state = {}, action) => {
     case "SEARCH_TEXT":
       const appState = window.localStorage.getItem("appState");
       const personsData = JSON.parse(appState);
-      console.log("state", state.persons);
       return {
         ...state,
         persons:
