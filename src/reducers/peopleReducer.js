@@ -4,10 +4,9 @@
 export default (state = {}, action) => {
   switch (action.type) {
     case "GET_PEOPLE_LIST":
-      const data = JSON.stringify(action.payload);
-      window.localStorage.setItem("appState", data);
       return {
         ...state,
+        peopleList: action.payload,
         persons: action.payload
       };
     case "LOAD_PERSON_DETAILS":
@@ -19,13 +18,11 @@ export default (state = {}, action) => {
       };
 
     case "SEARCH_TEXT":
-      const appState = window.localStorage.getItem("appState");
-      const personsData = JSON.parse(appState);
       return {
         ...state,
         persons:
-          personsData && action.payload != null
-            ? personsData.filter(obj =>
+          state.peopleList && action.payload != null
+            ? state.peopleList.filter(obj =>
                 Object.keys(obj).some(key =>
                   typeof obj[key] != "number"
                     ? obj[key].includes(action.payload)
