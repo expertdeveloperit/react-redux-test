@@ -141,6 +141,9 @@ svg {
   text-decoration: none;
   cursor: default;
 }
+.breadcrumb:last-child{
+  color: #000 !important;
+}
 .nofriends {
   text-align: center !important;
   width: 100%;
