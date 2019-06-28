@@ -2,7 +2,10 @@
   src/reducers/peopleReducer.js
 */
 const initialState = {
-  peopleList: JSON.parse(window.localStorage.getItem('appState'))
+  peopleList:
+    window && window.localStorage
+      ? JSON.parse(window.localStorage.getItem('appState'))
+      : []
 };
 export default (state = initialState, action) => {
   switch (action.type) {
