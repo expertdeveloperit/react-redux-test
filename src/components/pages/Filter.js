@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import "../../App.css";
-import { filterData } from "../../actions/index.js";
-import SearchSvg from "../Svg/SearchSvg";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import '../../App.css';
+import { filterData } from '../../actions/index.js';
+import SearchSvg from '../Svg/SearchSvg';
 /*
  * mapDispatchToProps
  */
@@ -10,10 +10,13 @@ const mapDispatchToProps = dispatch => ({
   filterData: text => dispatch(filterData(text))
 });
 
-/**
- * @class Filter
- * @extends {Component}
+/*
+ * mapStateToProps
  */
+const mapStateToProps = state => ({
+  ...state,
+  people: state.peopleReducer.persons
+});
 
 class Filter extends Component {
   handleChange = e => {
@@ -38,4 +41,7 @@ class Filter extends Component {
   }
 }
 
-export default connect(mapDispatchToProps)(Filter);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Filter);

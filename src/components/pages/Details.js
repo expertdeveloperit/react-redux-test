@@ -1,21 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 class Details extends React.Component {
   componentDidMount() {}
 
   opentab = (e, tabname) => {
-    let { i, tabcontent, tablinks } = "";
-    tabcontent = document.getElementsByClassName("tabcontent");
+    let { i, tabcontent, tablinks } = '';
+    tabcontent = document.getElementsByClassName('tabcontent');
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+      tabcontent[i].style.display = 'none';
     }
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName('tablinks');
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(' active', '');
     }
-    document.getElementById(tabname).style.display = "flex";
-    e.currentTarget.className += " active";
+    document.getElementById(tabname).style.display = 'flex';
+    e.currentTarget.className += ' active';
   };
   render() {
     const {
@@ -37,7 +37,7 @@ class Details extends React.Component {
               <Link to="/" className="breadcrumb">
                 <i className="material-icons">home</i>
               </Link>
-              <a href="#!" className="breadcrumb">
+              <a href="#!" className="breadcrumb inactive">
                 {name}
               </a>
               <a href="#!" className="breadcrumb">
@@ -75,7 +75,7 @@ class Details extends React.Component {
                     <a
                       href="#"
                       className="tablinks active"
-                      onClick={e => this.opentab(e, "Friends")}
+                      onClick={e => this.opentab(e, 'Friends')}
                     >
                       Friends
                     </a>
@@ -85,7 +85,7 @@ class Details extends React.Component {
                   <a
                     className="tablinks"
                     href="#"
-                    onClick={e => this.opentab(e, "Profession")}
+                    onClick={e => this.opentab(e, 'Profession')}
                   >
                     Profession
                   </a>
@@ -95,7 +95,7 @@ class Details extends React.Component {
             <div className="card-content grey lighten-4 list">
               <div
                 id="Friends"
-                style={{ display: "flex" }}
+                style={{ display: 'flex' }}
                 className="active tabcontent"
               >
                 {friends.map((name, i) => {
@@ -109,7 +109,7 @@ class Details extends React.Component {
               <div
                 id="Profession"
                 className="tabcontent"
-                style={{ display: "none" }}
+                style={{ display: 'none' }}
               >
                 {professions.map((name, i) => {
                   return (
