@@ -141,6 +141,10 @@ svg {
   text-decoration: none;
   cursor: default;
 }
+.nofriends {
+  text-align: center !important;
+  width: 100%;
+}
 @media screen and (max-width: 705px) {
   .box {
     justify-content: center;

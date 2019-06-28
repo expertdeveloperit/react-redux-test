@@ -70,17 +70,15 @@ class Details extends React.Component {
             </div>
             <div className="card-tabs">
               <ul className="tabs tabs-fixed-width">
-                {friends.length > 0 && (
-                  <li className="tab">
-                    <a
-                      href="#"
-                      className="tablinks active"
-                      onClick={e => this.opentab(e, 'Friends')}
-                    >
-                      Friends
-                    </a>
-                  </li>
-                )}
+                <li className="tab">
+                  <a
+                    href="#"
+                    className="tablinks active"
+                    onClick={e => this.opentab(e, 'Friends')}
+                  >
+                    Friends
+                  </a>
+                </li>
                 <li className="tab">
                   <a
                     className="tablinks"
@@ -98,13 +96,17 @@ class Details extends React.Component {
                 style={{ display: 'flex' }}
                 className="active tabcontent"
               >
-                {friends.map((name, i) => {
-                  return (
-                    <span className="new badge" data-badge-caption="" key={i}>
-                      {name}
-                    </span>
-                  );
-                })}
+                {friends.length ? (
+                  friends.map((name, i) => {
+                    return (
+                      <span className="new badge" data-badge-caption="" key={i}>
+                        {name}
+                      </span>
+                    );
+                  })
+                ) : (
+                  <p className="nofriends">{`${name} has no Friends`}</p>
+                )}
               </div>
               <div
                 id="Profession"
