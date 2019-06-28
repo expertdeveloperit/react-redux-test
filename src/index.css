@@ -148,6 +148,9 @@ svg {
   text-align: center !important;
   width: 100%;
 }
+.breadcrumb:before{
+  color: #000 !important;
+}
 @media screen and (max-width: 705px) {
   .box {
     justify-content: center;

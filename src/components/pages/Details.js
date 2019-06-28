@@ -36,9 +36,7 @@ class Details extends React.Component {
               <Link to="/" className="breadcrumb">
                 <i className="material-icons">home</i>
               </Link>
-              <a href="#!" className="breadcrumb inactive">
-                {name}
-              </a>
+              <span className="breadcrumb inactive">{name}</span>
             </div>
           </div>
         </nav>
