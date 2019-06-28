@@ -21,7 +21,6 @@ class Filter extends Component {
   };
 
   render() {
-    console.log("datata", this.props);
     return (
       <div className="container">
         <div className="search_field ">

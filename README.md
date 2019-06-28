@@ -47,13 +47,21 @@ If you do not want to redirect automatically then
 Add BROWSER=none in start script in package.json file like below
 "start": "BROWSER=none react-scripts start"
 ```
+
 ### Change Port
 
 ```
 Add PORT='your post' in start script lik below
-"start": "POST=4000 react-scripts start"
+
+Linux and MacOS
+"start": "PORT=4000 react-scripts start"
 ```
+
+Windows
+"start": "set PORT=4000 react-scripts start"
+
 ### Clean node modules
+
 Excute the following command:
 
 ```bash

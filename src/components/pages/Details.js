@@ -18,7 +18,16 @@ class Details extends React.Component {
     e.currentTarget.className += " active";
   };
   render() {
-    const { id, name, age, thumbnail, weight, hair_color } = this.props;
+    const {
+      id,
+      name,
+      age,
+      thumbnail,
+      weight,
+      hair_color,
+      friends,
+      professions
+    } = this.props;
 
     return (
       <div className="container details">
@@ -29,13 +38,10 @@ class Details extends React.Component {
                 <i className="material-icons">home</i>
               </Link>
               <a href="#!" className="breadcrumb">
-                First
+                {name}
               </a>
               <a href="#!" className="breadcrumb">
                 Second
-              </a>
-              <a href="#!" className="breadcrumb">
-                Third
               </a>
             </div>
           </div>
@@ -64,15 +70,17 @@ class Details extends React.Component {
             </div>
             <div className="card-tabs">
               <ul className="tabs tabs-fixed-width">
-                <li className="tab">
-                  <a
-                    href="#"
-                    className="tablinks active"
-                    onClick={e => this.opentab(e, "Friends")}
-                  >
-                    Friends
-                  </a>
-                </li>
+                {friends.length > 0 && (
+                  <li className="tab">
+                    <a
+                      href="#"
+                      className="tablinks active"
+                      onClick={e => this.opentab(e, "Friends")}
+                    >
+                      Friends
+                    </a>
+                  </li>
+                )}
                 <li className="tab">
                   <a
                     className="tablinks"
@@ -90,7 +98,7 @@ class Details extends React.Component {
                 style={{ display: "flex" }}
                 className="active tabcontent"
               >
-                {this.props.friends.map((name, i) => {
+                {friends.map((name, i) => {
                   return (
                     <span className="new badge" data-badge-caption="" key={i}>
                       {name}
@@ -103,7 +111,7 @@ class Details extends React.Component {
                 className="tabcontent"
                 style={{ display: "none" }}
               >
-                {this.props.professions.map((name, i) => {
+                {professions.map((name, i) => {
                   return (
                     <span className="new badge" data-badge-caption="" key={i}>
                       {name}

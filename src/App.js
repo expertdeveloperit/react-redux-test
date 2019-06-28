@@ -4,6 +4,7 @@ import Home from "./components/pages/Home";
 import Single from "./components/pages/Single";
 import { Provider } from "react-redux";
 import configureStore from "./store";
+
 class App extends Component {
   render() {
     return (
