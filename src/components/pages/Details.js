@@ -19,7 +19,6 @@ class Details extends React.Component {
   };
   render() {
     const {
-      id,
       name,
       age,
       thumbnail,

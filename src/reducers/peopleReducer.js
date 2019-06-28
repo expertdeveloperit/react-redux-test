@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
           state.peopleList && action.payload != null
             ? state.peopleList.filter(obj =>
                 Object.keys(obj).some(key =>
-                  typeof obj[key] != 'number'
+                  typeof obj[key] !== 'number'
                     ? obj[key].includes(action.payload)
                     : obj[key].toString().includes(action.payload)
                 )
