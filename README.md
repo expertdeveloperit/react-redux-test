@@ -1,5 +1,3 @@
-#### A simple redux setup with [create-react-app](https://github.com/facebookincubator/create-react-app).
-
 ### Basic application to show list of people,filter and their details built with React & Redux
 
 This simple application prototype shows how we can use React and Redux to build a friendly user experience.
@@ -36,7 +34,7 @@ Excute the following command:
 npm start or yarn start
 ```
 
-### test the React App
+### test the App
 
 npm test or yarn test
 
